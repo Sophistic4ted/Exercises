@@ -6,6 +6,7 @@
 
 int **Array2D(int n_rows, int n_columns)
 {
+
     int **tab = new int*[n_rows];
     for (int i = 0; i < n_rows; i++)
     {

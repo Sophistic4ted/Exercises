@@ -1,0 +1,14 @@
+//
+// Created by kwiakami on 14.03.17.
+//
+
+#ifndef JIMP_EXERCISES_MINIMALTIMEDDIFFERENCE_H
+#define JIMP_EXERCISES_MINIMALTIMEDDIFFERENCE_H
+
+
+class MinimalTimedDifference {
+
+};
+
+
+#endif //JIMP_EXERCISES_MINIMALTIMEDDIFFERENCE_H
