@@ -4,9 +4,10 @@
 
 #include "Polybius.h"
 
+string alphabet="abcdefghiklmnopqrstuvwxyz";
+
 string PolybiusCrypt(string message)
 {
-    string alphabet="abcdefghiklmnopqrstuvwxyz";
     if (message=="j") message ="i";
     for (int i = 0; i< alphabet.length();i++)
     {
@@ -19,5 +20,15 @@ string PolybiusCrypt(string message)
 }
 string PolybiusDecrypt(string crypted)
 {
+    int number = atoi(crypted.c_str());
+    for (int i =0; i<alphabet.length();i++)
+    {
+       if (i== (5*((number/10)-1)+number%10-1))
+       {
+           string tmp_str;
+           tmp_str.push_back(alphabet[i]);
+           return tmp_str;
+       }
+    }
     return crypted;
 }
