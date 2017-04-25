@@ -3,7 +3,7 @@
 //
 
 #include "Pesel.h"
-
+#include <iostream>
 namespace academia{
 
     Pesel::Pesel(const std::string &pesel_) : pesel_(pesel_) {
@@ -23,9 +23,17 @@ namespace academia{
                 throw InvalidPeselCharacter(pesel_);
             }
         }
-        long summ = (9*pesel_[0] + 7*pesel_[1] + 3*pesel_[2] + 1*pesel_[3] + 9*pesel_[4] + 7*pesel_[5] + 3*pesel_[6] + 1*pesel_[7] + 9*pesel_[8] + 7*pesel_[9]) % 10;
-        if(pesel_[10] != summ){
-            throw InvalidPeselChecksum(pesel_, summ);
+        long g = 0;
+        long summ[10] = {9,7,3,1,9,7,3,1,9,7};
+        for (int i = 0; i < 10; i++){
+
+
+            g += summ[i] * (pesel_[i] - '0');
+
+        }
+        g %= 10;
+        if(atoi(&pesel_[10]) != g){
+            throw InvalidPeselChecksum(pesel_, g);
         }
     }
 
@@ -37,7 +45,7 @@ namespace academia{
 
     }
 
-    InvalidPeselLength::InvalidPeselLength(std::string t, int sum): AcademiaDataValidationError("Invalid PESEL(" + t + ") length:" + std::to_string(sum)) {
+    InvalidPeselLength::InvalidPeselLength(std::string t, int sum): AcademiaDataValidationError("Invalid PESEL(" + t + ") length: " + std::to_string(sum)) {
 
     }
 
