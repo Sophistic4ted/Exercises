@@ -3,3 +3,7 @@
 //
 
 #include "IncrementalFill.h"
+
+/*int arrays::IncrementalFill::Value(int index) const {
+    return 0;
+}*/

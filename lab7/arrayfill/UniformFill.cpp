@@ -3,3 +3,9 @@
 //
 
 #include "UniformFill.h"
+
+
+
+/*int arrays::UniformFill::Value(int index) const {
+    return value_;
+}*/

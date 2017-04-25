@@ -5,12 +5,7 @@
 #ifndef JIMP_EXERCISES_ARRAYFILL_H
 #define JIMP_EXERCISES_ARRAYFILL_H
 
-
-
-class ArrayFill {
-
-};
-
-
-
+#include "ArrayFillBase.h"
+#include "UniformFill.h"
+#include "IncrementalFill.h"
 #endif //JIMP_EXERCISES_ARRAYFILL_H
